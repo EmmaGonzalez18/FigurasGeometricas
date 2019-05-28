@@ -17,12 +17,12 @@ public void SetRadio (Double r) {
     Radio = r;
 }
 
-public Double GetDiámetro () {
-    return Diámetro;
+public Double Diámetro () {
+    return Radio*2;
 }
 
-public void SetDiámetro (Double D) {
-    Diámetro = D;
+public void SetDiámetro (Integer diámetro) {
+    this.Diámetro = Diámetro;
 }
 
 public Double Superficie () {
@@ -32,4 +32,29 @@ public Double Superficie () {
 public Double Perímetro () {
     return (3.14 * Diámetro);
    }
+
+public void mover3 (Canvas c3, Integer despX, Integer despY) {
+    Integer dx = 0, dy = 0;
+        if (despX > getX()) {
+            dx = 1;
+        }
+        if (despX < getX()) {
+            dx = -1;
+        }
+        if (despY > getY()) {
+            dy = 1;
+        }
+        if (despY < getY()) {
+            dy = -1;
+        }
+        c3.setColorDeLapiz(Color.CYAN);
+        for (Integer u = 0; u < 200; u++) {
+            c3.rellenarCirculo(getX(), getY(), Diámetro().intValue());
+            c3.espera(10);
+            c3.borrarCirculo(getX(), getY(), Diámetro().intValue());            
+            setX(getX()+dx);
+            setY(getY()+dy);
+        }
+        c3.rellenarCirculo(getX(), getY(), Diámetro().intValue());
+    }
 }

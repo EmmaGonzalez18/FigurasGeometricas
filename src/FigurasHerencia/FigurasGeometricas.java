@@ -53,12 +53,17 @@ public FigurasGeometricas (Integer x, Integer y, Integer X2, Integer Y2, Color c
       }
     return Y2;
     }
+    
     public Color getColor() {
         return color;
     }
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public void mover (Canvas c, Integer destX, Integer destY) {
+
     }
 }
 

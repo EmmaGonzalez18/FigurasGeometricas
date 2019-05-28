@@ -1,8 +1,8 @@
 package FigurasHerencia;
 import java.awt.Color;
+import java.util.Random;
     public class Triangulo extends FigurasGeometricas {
     private Double base, altura;
-
     public Triangulo (Double b, Double a, Color c) {
         super(c);
         base = b;
@@ -31,7 +31,30 @@ import java.awt.Color;
     public void setAltura(Double altura) {
         this.altura = altura;
     }
-}    
-    
-    
+
+    public void mover2 (Canvas c2, Integer despX, Integer despY) {
+       Integer dx = 0, dy = 0;
+        if (despX > getX()) {
+            dx = 1;
+        }
+        if (despX < getX()) {
+            dx = -1;
+        }
+        if (despY > getY()) {
+            dy = 1;
+        }
+        if (despY < getY()) {
+            dy = -1;
+        }
+        c2.setColorDeLapiz(Color.yellow);
+        for (Integer y = 0; y < 200; y++) {
+            c2.rellenarTriangulo(getX(), getY(), base.intValue(), altura.intValue());
+            c2.espera(10);
+            c2.borrarTriangulo(getX(), getY(), base.intValue(), altura.intValue());
+            setX (getX ()+dx);
+            setY (getY ()+dy);
+        }
+        c2.rellenarTriangulo(getX(), getY(), base.intValue(), altura.intValue());
+    }   
+ }  
 
