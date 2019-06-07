@@ -51,14 +51,14 @@ public Rectangulo (Double l, Double a, Color c) {
     public void setAncho(Double ancho) {
         this.ancho = ancho;
     }
-
-   public void mover (Canvas c, Integer destX, Integer destY) {
+    
+    /**public void mover (Canvas c, Integer destX, Integer destY) {
         Integer dx = 0, dy = 0;
         if (destX > getX()) {
             dx = 1;
         }
         if (destX < getX()) {
-            dx = -1;
+            dx = -1 ;
         }
         if (destY > getY()) {
             dy = 1;
@@ -67,8 +67,8 @@ public Rectangulo (Double l, Double a, Color c) {
             dy = -1;
         }
         
-        c.setColorDeLapiz(Color.GREEN);
-        for (Integer i = 0; i < 200; i = i+1) {
+        c.setColorDeLapiz(getColor ());
+        for (Integer i = 0; i < 800; i = i+1) {
             c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
             c.espera(10);
             c.borrarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());            
@@ -77,7 +77,8 @@ public Rectangulo (Double l, Double a, Color c) {
         }
         c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
         
-    }
+    }*/
+}
     
     
     
@@ -108,4 +109,4 @@ public Rectangulo (Double l, Double a, Color c) {
                     PosY--;
    }
  } */
-}
+

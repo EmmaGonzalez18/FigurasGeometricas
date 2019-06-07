@@ -9,7 +9,6 @@ import java.util.Random;
         altura = a;
     }
 
-//public Rectangulo (Double l, Double a, String c, Integer x, Integer y) {
     public Triangulo (Double b, Double a, Color c, Integer x, Integer y, Integer X2, Integer Y2) {
         super(x, y, X2, Y2, c);
         base = b;
@@ -31,23 +30,24 @@ import java.util.Random;
     public void setAltura(Double altura) {
         this.altura = altura;
     }
-
-    public void mover2 (Canvas c2, Integer despX, Integer despY) {
-       Integer dx = 0, dy = 0;
+    
+   /**  public void mover2 (Canvas c2, Integer despX, Integer despY) {
+        Random uio2 = new Random ();
+        Integer dx = 0, dy = 0;
         if (despX > getX()) {
-            dx = 1;
+            dx = uio2.nextInt(19)-9;
         }
         if (despX < getX()) {
-            dx = -1;
+            dx = uio2.nextInt(19)-9;
         }
         if (despY > getY()) {
-            dy = 1;
+            dy = uio2.nextInt(19)-9;
         }
         if (despY < getY()) {
-            dy = -1;
+            dy = uio2.nextInt(19)-9;
         }
-        c2.setColorDeLapiz(Color.yellow);
-        for (Integer y = 0; y < 200; y++) {
+        c2.setColorDeLapiz(getColor ());
+        for (Integer y = 0; y < 100; y++) {
             c2.rellenarTriangulo(getX(), getY(), base.intValue(), altura.intValue());
             c2.espera(10);
             c2.borrarTriangulo(getX(), getY(), base.intValue(), altura.intValue());
@@ -55,6 +55,6 @@ import java.util.Random;
             setY (getY ()+dy);
         }
         c2.rellenarTriangulo(getX(), getY(), base.intValue(), altura.intValue());
-    }   
+    }   */
  }  
 

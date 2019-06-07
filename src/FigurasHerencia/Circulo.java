@@ -33,7 +33,7 @@ public Double Perímetro () {
     return (3.14 * Diámetro);
    }
 
-public void mover3 (Canvas c3, Integer despX, Integer despY) {
+/**public void mover3 (Canvas c3, Integer despX, Integer despY) {
     Integer dx = 0, dy = 0;
         if (despX > getX()) {
             dx = 1;
@@ -41,14 +41,14 @@ public void mover3 (Canvas c3, Integer despX, Integer despY) {
         if (despX < getX()) {
             dx = -1;
         }
-        if (despY > getY()) {
+        if (despY > getY ()) {
             dy = 1;
         }
         if (despY < getY()) {
             dy = -1;
         }
-        c3.setColorDeLapiz(Color.CYAN);
-        for (Integer u = 0; u < 200; u++) {
+        c3.setColorDeLapiz(getColor ());
+        for (Integer u = 0; u < 800; u++) {
             c3.rellenarCirculo(getX(), getY(), Diámetro().intValue());
             c3.espera(10);
             c3.borrarCirculo(getX(), getY(), Diámetro().intValue());            
@@ -56,5 +56,5 @@ public void mover3 (Canvas c3, Integer despX, Integer despY) {
             setY(getY()+dy);
         }
         c3.rellenarCirculo(getX(), getY(), Diámetro().intValue());
-    }
+    } */
 }

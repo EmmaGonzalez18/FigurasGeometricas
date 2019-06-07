@@ -25,9 +25,67 @@ public class figurasherencia {
         figurasherencia pantalla = new figurasherencia();
     //   pantalla.GraficarFiguras();
    //    pantalla.ColleccionFiguras();
-         pantalla.Movimiento ();
+  //     pantalla.Movimiento ();
+         pantalla.MovimientoVariado ();
     }
-   public void Movimiento () {   
+ 
+    public void MovimientoVariado () {
+        miCanvas = new Canvas ("Figuras con movimiento Variado", 1900, 1600);
+        miCanvas.setVisible(true);
+        ArrayList<FigurasGeometricas> lista = new ArrayList <> ();
+        Rectangulo r = new Rectangulo(100., 50., Color.red, 300, 300, 20, 20);
+        lista.add(r);
+        Triangulo t = new Triangulo (40., 50., Color.CYAN, 100, 100, 20, 20);
+        lista.add(t);
+        Circulo c = new Circulo (20.0, 12.0, Color.BLUE);
+        lista.add(c);
+        r = new Rectangulo(150., 150., Color.yellow, 200, 200, 30, 30);
+        lista.add(r);
+        r = new Rectangulo(50., 75., Color.blue, 100, 100, 30, 30);
+        lista.add(r);
+        
+        t = new Triangulo (40., 50., Color.LIGHT_GRAY, 100, 100, 20, 20);
+        lista.add (t);
+        t = new Triangulo (40., 50., Color.PINK, 20, 90, 100, 20);
+        lista.add (t);
+        
+        c = new Circulo (10., 12., Color.GREEN);
+        lista.add (c);
+        c = new Circulo (50., 30., Color.WHITE);
+        lista.add (c);
+        for (FigurasGeometricas f : lista) {
+            try {
+                f.MovimientoVariado (miCanvas);
+            }
+            catch (ClassCastException e) {
+            
+            }
+            
+        }
+    }
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  /** public void Movimiento () {   
    miCanvas = new Canvas ("Figuras Geometricas", 1900, 1900);
    miCanvas.setVisible(true);
         ArrayList<FigurasGeometricas> lista = new ArrayList <> ();
@@ -77,59 +135,8 @@ public class figurasherencia {
               
           }
         }
-     }
-  }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     }*/
+  }  
     /**  private void GraficarFiguras() {
       Triangulo t = new Triangulo (10.3, 14.5, 3., 3., 3., 3., Color.CYAN);
       Rectangulo r = new Rectangulo (12.3, 14.4, Color.GREEN, 550, 300, 12, 15);
