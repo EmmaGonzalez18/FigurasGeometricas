@@ -52,6 +52,20 @@ public Rectangulo (Double l, Double a, Color c) {
         this.ancho = ancho;
     }
     
+    public void MoverLugar (Canvas z) {
+    z.setColorDeLapiz(getColor ());
+    z.borrarRectangulo (getX (), getY (), ancho.intValue(), largo.intValue());;
+    CalcularPosición ();
+    z.rellenarRectangulo(getX (), getY (), ancho.intValue(), largo.intValue());
+       }
+    
+    }
+
+
+    
+    
+    
+    
     /**public void mover (Canvas c, Integer destX, Integer destY) {
         Integer dx = 0, dy = 0;
         if (destX > getX()) {
@@ -65,48 +79,6 @@ public Rectangulo (Double l, Double a, Color c) {
         }
         if (destY < getY()) {
             dy = -1;
-        }
-        
-        c.setColorDeLapiz(getColor ());
-        for (Integer i = 0; i < 800; i = i+1) {
-            c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
-            c.espera(10);
-            c.borrarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());            
-            setX(getX()+dx);
-            setY(getY()+dy);
-        }
-        c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
-        
-    }*/
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   /** public void MoverRectangulo (Canvas miCanvas) {
-       miCanvas.setColorDeLapiz(getColor ());
-       int PosX = GetX2(), PosY = GetY2();
-                for (int m = 0; m < 800; m++) {
-                    miCanvas.rellenarRectangulo(PosX, PosY, getAncho().intValue(), getLargo().intValue());
-                    miCanvas.espera(10);
-                    miCanvas.borrarRectangulo(PosX, PosY, getAncho().intValue(), getLargo().intValue());
-                    getAncho();
-                    getLargo();
-                    PosX++;
-                    PosY--;
-   }
- } */
+        } */
+
 

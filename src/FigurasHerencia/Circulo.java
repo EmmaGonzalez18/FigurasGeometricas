@@ -3,7 +3,7 @@ import java.awt.Color;
 public class Circulo extends FigurasGeometricas {
     private Double Radio, Diámetro;
    // private Color Color;
-public Circulo (Double r, Double d, Color c) {
+public Circulo (Double r, Double d, Color c, Integer x, Integer y) {
     super (c);
     Radio = r;
     Diámetro = d;
@@ -33,28 +33,10 @@ public Double Perímetro () {
     return (3.14 * Diámetro);
    }
 
-/**public void mover3 (Canvas c3, Integer despX, Integer despY) {
-    Integer dx = 0, dy = 0;
-        if (despX > getX()) {
-            dx = 1;
-        }
-        if (despX < getX()) {
-            dx = -1;
-        }
-        if (despY > getY ()) {
-            dy = 1;
-        }
-        if (despY < getY()) {
-            dy = -1;
-        }
-        c3.setColorDeLapiz(getColor ());
-        for (Integer u = 0; u < 800; u++) {
-            c3.rellenarCirculo(getX(), getY(), Diámetro().intValue());
-            c3.espera(10);
-            c3.borrarCirculo(getX(), getY(), Diámetro().intValue());            
-            setX(getX()+dx);
-            setY(getY()+dy);
-        }
-        c3.rellenarCirculo(getX(), getY(), Diámetro().intValue());
-    } */
+public void MoverLugar (Canvas z) {
+    z.setColorDeLapiz(getColor ());
+    z.borrarCirculo(getX (), getY (), Diámetro.intValue());
+    CalcularPosición ();
+    z.rellenarCirculo(getX (), getY (), Diámetro.intValue());
+ }
 }

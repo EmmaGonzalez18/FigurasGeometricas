@@ -7,7 +7,7 @@ public class figurasherencia {
     public static void main(String[] args) {
         Triangulo t = new Triangulo (10.3, 14.5, Color.CYAN);
         Rectangulo r = new Rectangulo (12.3, 14.4, Color.GREEN, 550, 300, 12, 15);
-        Circulo c = new Circulo (12.0, 15.3, Color.ORANGE);
+        Circulo c = new Circulo (12.0, 15.3, Color.ORANGE, 5, 5);
         System.out.println ("Se ha formado un rectángulo de: "+r.getAncho()+"m de ancho, "+r.getLargo()+"m de largo. Formando un perimetro de: "+r.Perimetro()+"m, y una superficie de: "+r.Superficie()+"m.");
     r.setAncho (22.2);
     r.setLargo(12.0);
@@ -33,36 +33,45 @@ public class figurasherencia {
         miCanvas = new Canvas ("Figuras con movimiento Variado", 1900, 1600);
         miCanvas.setVisible(true);
         ArrayList<FigurasGeometricas> lista = new ArrayList <> ();
-        Rectangulo r = new Rectangulo(100., 50., Color.red, 300, 300, 20, 20);
+        Random valor = new Random ();
+        Rectangulo r = new Rectangulo (10., 20., Color.MAGENTA, valor.nextInt(1000), valor.nextInt(1000), 20, 20);
         lista.add(r);
-        Triangulo t = new Triangulo (40., 50., Color.CYAN, 100, 100, 20, 20);
+        r.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
+        Triangulo t = new Triangulo (40., 50., Color.CYAN, valor.nextInt(1000), valor.nextInt(1000), 20, 20);
         lista.add(t);
-        Circulo c = new Circulo (20.0, 12.0, Color.BLUE);
+        t.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
+        Circulo c = new Circulo (20.0, 12.0, Color.BLUE, valor.nextInt(1000), valor.nextInt(1000));
         lista.add(c);
-        r = new Rectangulo(150., 150., Color.yellow, 200, 200, 30, 30);
+        c.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
+        r = new Rectangulo(150., 150., Color.yellow, valor.nextInt(1000), valor.nextInt(1000), 30, 30);
         lista.add(r);
-        r = new Rectangulo(50., 75., Color.blue, 100, 100, 30, 30);
+        r.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
+        r = new Rectangulo(50., 75., Color.blue, valor.nextInt(1000), valor.nextInt(1000), 30, 30);
         lista.add(r);
-        
-        t = new Triangulo (40., 50., Color.LIGHT_GRAY, 100, 100, 20, 20);
+        r.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
+        t = new Triangulo (40., 50., Color.LIGHT_GRAY, valor.nextInt(1000), valor.nextInt(1000), 20, 20);
         lista.add (t);
-        t = new Triangulo (40., 50., Color.PINK, 20, 90, 100, 20);
+        t.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
+        t = new Triangulo (40., 50., Color.PINK, valor.nextInt(1000), valor.nextInt(1000), 100, 20);
         lista.add (t);
+        t.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
+        c = new Circulo (10., 12., Color.GREEN, valor.nextInt(1000), valor.nextInt(1000));
+        lista.add (c);
+        c.SetDestino(valor.nextInt(1000), valor.nextInt (1000));
+        c = new Circulo (50., 30., Color.WHITE, valor.nextInt(1000), valor.nextInt(1000));
+        lista.add (c);
+        c.SetDestino(valor.nextInt (1000), valor.nextInt(1000));
         
-        c = new Circulo (10., 12., Color.GREEN);
-        lista.add (c);
-        c = new Circulo (50., 30., Color.WHITE);
-        lista.add (c);
+        for (int j = 0; j < 900; j++) {
         for (FigurasGeometricas f : lista) {
-            try {
-                f.MovimientoVariado (miCanvas);
-            }
-            catch (ClassCastException e) {
-            
-            }
-            
+            f.MoverLugar(miCanvas);
+            miCanvas.espera(5);
         }
-    }
+        }
+   } 
+}
+   
+
     
     
    
@@ -136,7 +145,7 @@ public class figurasherencia {
           }
         }
      }*/
-  }  
+
     /**  private void GraficarFiguras() {
       Triangulo t = new Triangulo (10.3, 14.5, 3., 3., 3., 3., Color.CYAN);
       Rectangulo r = new Rectangulo (12.3, 14.4, Color.GREEN, 550, 300, 12, 15);
