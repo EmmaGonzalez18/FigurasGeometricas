@@ -38,5 +38,5 @@ public void MoverLugar (Canvas z) {
     z.borrarCirculo(getX (), getY (), Diámetro.intValue());
     CalcularPosición ();
     z.rellenarCirculo(getX (), getY (), Diámetro.intValue());
- }
+  }
 }

@@ -57,9 +57,8 @@ public Rectangulo (Double l, Double a, Color c) {
     z.borrarRectangulo (getX (), getY (), ancho.intValue(), largo.intValue());;
     CalcularPosición ();
     z.rellenarRectangulo(getX (), getY (), ancho.intValue(), largo.intValue());
-       }
-    
     }
+}
 
 
     

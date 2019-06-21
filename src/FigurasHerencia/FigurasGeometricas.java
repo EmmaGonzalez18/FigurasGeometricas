@@ -101,8 +101,16 @@ public void CalcularPosición () {
      if (destX!=getX()&&(destY!=getY())){
             setX(getX()+dx);
             setY(getY()+dy);
+        }
+    try {
+        if (destX == getX() && destY == getY()) {
+        setX (getX() + dx);
+        setY (getY() + dy);        
+        }
+    }
+    catch (ClassCastException e) {
+     }
    }
- }
 }
     
         

@@ -40,7 +40,7 @@ public class figurasherencia {
         Triangulo t = new Triangulo (40., 50., Color.CYAN, valor.nextInt(1000), valor.nextInt(1000), 20, 20);
         lista.add(t);
         t.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
-        Circulo c = new Circulo (20.0, 12.0, Color.BLUE, valor.nextInt(1000), valor.nextInt(1000));
+        Circulo c = new Circulo (20., 20., Color.RED, valor.nextInt(1000), valor.nextInt(1000));
         lista.add(c);
         c.SetDestino(valor.nextInt(1000), valor.nextInt(1000));
         r = new Rectangulo(150., 150., Color.yellow, valor.nextInt(1000), valor.nextInt(1000), 30, 30);
@@ -62,12 +62,12 @@ public class figurasherencia {
         lista.add (c);
         c.SetDestino(valor.nextInt (1000), valor.nextInt(1000));
         
-        for (int j = 0; j < 900; j++) {
+        for (int j = 0; j < 200; j++) {
         for (FigurasGeometricas f : lista) {
             f.MoverLugar(miCanvas);
-            miCanvas.espera(5);
-        }
-        }
+            miCanvas.espera(1);
+         }
+      }
    } 
 }
    
